@@ -4,6 +4,7 @@ import 'package:esewa_clone/utils/widgets/advertisement_container.dart';
 import 'package:esewa_clone/utils/widgets/balance_container.dart';
 import 'package:esewa_clone/utils/widgets/middle_container.dart';
 import 'package:esewa_clone/utils/widgets/popular_carousel.dart';
+import 'package:esewa_clone/utils/widgets/qr_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -36,13 +37,18 @@ class _HomePageState extends State<HomePage> {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
         backgroundColor: Colors.black,
-        floatingActionButton: CircleAvatar(
-          backgroundColor: Colors.lightGreen,
-          radius: 30,
-          child: Icon(
-            FontAwesomeIcons.qrcode,
-            size: 30,
-            color: Colors.black,
+        floatingActionButton: GestureDetector(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (_)=>QRViewExample()));
+          },
+          child: CircleAvatar(
+            backgroundColor: Colors.lightGreen,
+            radius: 30,
+            child: Icon(
+              FontAwesomeIcons.qrcode,
+              size: 30,
+              color: Colors.black,
+            ),
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
